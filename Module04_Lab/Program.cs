@@ -11,6 +11,8 @@ internal class Program
     {
         TransportFactory transportFactory = null;
         ITransport transport = null;
+        string? model;
+        double speed;
         Console.WriteLine("Transport type (1- car, 2- motorcycle 3- plane): ");
         int type = Convert.ToInt32(Console.ReadLine());
         switch (type)
@@ -28,7 +30,11 @@ internal class Program
                 Console.WriteLine("Invalid input");
                 break;
         }
-        transport = transportFactory.CreateTransport();
+        Console.WriteLine("Enter the model: ");
+        model = Console.ReadLine();
+        Console.WriteLine("Enter the speed: ");
+        speed = Convert.ToDouble(Console.ReadLine());
+        transport = transportFactory.CreateTransport(speed, model);
         transport.Move();
         transport.FuelUp();
     }

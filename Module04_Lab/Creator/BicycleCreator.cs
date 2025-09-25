@@ -2,10 +2,10 @@ using Module04_Lab.Transports;
 
 namespace Module04_Lab.Creator;
 
-public class MotorcycleFactory: TransportFactory
+public class BicycleCreator: TransportFactory
 {
     public override ITransport CreateTransport(double speed, string model)
     {
-        return new Motorcycle(model, speed);
+        return new Bicycle(model, speed);
     }
 }

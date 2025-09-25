@@ -4,8 +4,8 @@ namespace Module04_Lab.Creator;
 
 public class PlaneFactory: TransportFactory
 {
-    public override ITransport CreateTransport()
+    public override ITransport CreateTransport(double speed, string model)
     {
-        return new Plane();
+        return new Plane(model, speed);
     }
 }
